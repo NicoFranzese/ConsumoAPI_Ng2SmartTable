@@ -1,0 +1,45 @@
+<!-- Listado Entidades -->
+<div id="divEntidades" style="font-family: 'SFPro_Regular', 'arial', sans-serif; font-size:100%;">
+  <div style="text-align: center;">
+
+<div style="background-color: #D8DDDD; align-items: center;" align="center">
+    <br>
+      <!-- <h1 class="display-3 animated bounceInRight"><font style="color: white">Categorias</font></h1> -->
+      <font class="titulo">Listado de entidades Traidas con API de SoyYo</font>
+      <br><br>
+
+      <table face="verdana">
+        <thead style="background-color: #DC143C; color: white">
+          <!-- <tr>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr> -->
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of entidades" style="font-size: 15px;">
+            <td *ngIf="e.entityId"><b>{{e.name}}</b></td>
+            <td>
+              <div *ngIf="e.entityId" align="center">
+                  <img (click)="AgregarEntidad(e.entityId, e.name, e.identificationNumber, e.expirationDate, e.contactName, e.contactMail, e.ipAddress, e.logo	)" style=" width:25px; height: 25px; "
+                  src="../assets/img/add.png"/>
+
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<hr class="my-4">
+
+<div align="center">
+  <font class="titulo" >Entidades seleccionadas</font>
+</div>
+
+<ng2-smart-table [settings]="settings" 
+                 [source]="data" 
+                 (custom)="EliminarEntidad($event)">
+</ng2-smart-table>
