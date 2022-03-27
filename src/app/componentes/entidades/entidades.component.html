@@ -1,0 +1,37 @@
+<!-- Listado Entidades -->
+<div id="divEntidades">
+    <div>
+  
+      <div align="center">
+      <br>
+        <font class="titulo">Listado de entidades Traidas con API</font>
+        <br><br>
+        <table face="verdana">
+          <tbody>
+            <tr *ngFor="let e of entidades" class="listadoEntidades">
+              <td *ngIf="e.entityId"><b>{{e.name}}</b></td>
+              <td>
+                <div *ngIf="e.entityId" align="center">
+                    <img (click)="AgregarEntidad(e.entityId, e.name, e.identificationNumber, e.expirationDate, e.contactName, e.contactMail, e.ipAddress, e.logo	)" 
+                    class="accionesListado"
+                    src="../assets/img/add.png"/>
+  
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <hr class="my-4">
+  
+  <div align="center">
+    <font class="titulo" >Entidades seleccionadas</font>
+  </div>
+  
+  <ng2-smart-table [settings]="settings" 
+                   [source]="data" 
+                   (custom)="EliminarEntidad($event)">
+  </ng2-smart-table>

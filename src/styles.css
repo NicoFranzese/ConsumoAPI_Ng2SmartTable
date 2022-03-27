@@ -1,4 +1,24 @@
-/* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
+.titulo {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Alegreya Bold', 'arial', sans-serif; font-size:25px;
+}
+
+.fondo {
+  background-color: #D8DDDD;
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+.listadoEntidades{
+  font-size: 15px;
+}
+
+.accionesListado{
+  width:25px; height: 25px; 
+}
 
 /* position */
 .toast-center-center {
